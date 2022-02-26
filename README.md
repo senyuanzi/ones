@@ -14,7 +14,7 @@ and the Flutter guide for
 ones，the chosen，better to flutter.
 ones，天选之存在，终将统治flutter。
 
-### V0.1.1 文档
+### 文档
 
 能有效减少20%到40%的UI代码行数~！
 
@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.1.1
+  ones: ^0.1.3
 ```
 
 #### 示例
