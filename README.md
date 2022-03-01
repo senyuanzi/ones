@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.1.3
+  ones: ^0.1.6
 ```
 
 #### 示例
@@ -195,6 +195,10 @@ TextField
 - hintFamily
 - border
 - noBorder
+- isCollapsedThenContentPadding
+  1. isCollapsedThenContentPadding
+  2. isCollapsedThenContentPaddingAll
+  3. isCollapsedThenContentPaddingSymmetric
 
 ## Additional information
 

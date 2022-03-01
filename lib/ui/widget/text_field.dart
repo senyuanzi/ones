@@ -147,6 +147,23 @@ extension TextFieldX on TextField {
     return copyWith(decoration: decoration?.copyWith(hintStyle: mergeStyle));
   }
 
+  TextField isCollapsedThenContentPaddingAll(double size) {
+    return isCollapsedThenContentPadding(left: size, top: size, right: size, bottom: size);
+  }
+
+  TextField isCollapsedThenContentPaddingSymmetric({double horizontal = 0, double vertical = 0}) {
+    return isCollapsedThenContentPadding(
+        left: horizontal, top: vertical, right: horizontal, bottom: vertical);
+  }
+
+  TextField isCollapsedThenContentPadding(
+      {double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return copyWith(
+        decoration: decoration?.copyWith(
+            isCollapsed: true,
+            contentPadding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom)));
+  }
+
   TextField border(InputBorder border) {
     return copyWith(decoration: decoration?.copyWith(border: border));
   }
@@ -160,7 +177,7 @@ extension TextFieldX on TextField {
     Key? key,
     TextEditingController? controller,
     FocusNode? focusNode,
-    InputDecoration? decoration = const InputDecoration(),
+    InputDecoration? decoration,
     TextInputType? keyboardType,
     TextInputAction? textInputAction,
     TextCapitalization? textCapitalization,
