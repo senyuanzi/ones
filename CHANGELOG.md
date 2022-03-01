@@ -1,6 +1,10 @@
+## 0.1.7
+
+* Container border、roundedCorner
+
 ## 0.1.6
 
-* TextField extend api: isCollapsedThenContentPadding
+* TextField api: isCollapsedThenContentPadding
 
 ## 0.1.1
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ones/core/copywith.dart';
 
 extension RRectX<T extends Widget> on T {
   ///通用圆角，但不适用于有阴影等效果的微件
@@ -13,11 +14,7 @@ extension RRectX<T extends Widget> on T {
   ClipRRect roundedRectVertical(double top, double bottom) {
     return ClipRRect(
       child: this,
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(top),
-          topRight: Radius.circular(top),
-          bottomLeft: Radius.circular(bottom),
-          bottomRight: Radius.circular(bottom)),
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(top), topRight: Radius.circular(top), bottomLeft: Radius.circular(bottom), bottomRight: Radius.circular(bottom)),
     );
   }
 
@@ -25,12 +22,15 @@ extension RRectX<T extends Widget> on T {
   ClipRRect roundedRectHorizontal(double left, double right) {
     return ClipRRect(
       child: this,
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(left),
-          topRight: Radius.circular(right),
-          bottomLeft: Radius.circular(left),
-          bottomRight: Radius.circular(right)),
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(left), topRight: Radius.circular(right), bottomLeft: Radius.circular(left), bottomRight: Radius.circular(right)),
     );
+  }
+}
+
+///Container roundedCorner
+extension RoundedCornerContainerX on Container {
+  Container roundedCorner(double radius) {
+    return copyWith(decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius)));
   }
 }
 
@@ -52,8 +52,7 @@ extension RRectCardX on Card {
   }
 }
 
-ShapeBorder get roundedRectShape =>
-    RoundedRectangleBorder(borderRadius: BorderRadius.circular(16));
+ShapeBorder get roundedRectShape => RoundedRectangleBorder(borderRadius: BorderRadius.circular(16));
 
 // extension RoundedRectangleButton on ButtonStyleButton {
 //   roundedRect(double radius) {

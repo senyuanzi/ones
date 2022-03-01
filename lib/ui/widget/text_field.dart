@@ -147,6 +147,10 @@ extension TextFieldX on TextField {
     return copyWith(decoration: decoration?.copyWith(hintStyle: mergeStyle));
   }
 
+  // TextField height(double size) {
+  //   return isCollapsedThenContentPadding(left: size, top: size, right: size, bottom: size);
+  // }
+
   TextField isCollapsedThenContentPaddingAll(double size) {
     return isCollapsedThenContentPadding(left: size, top: size, right: size, bottom: size);
   }
