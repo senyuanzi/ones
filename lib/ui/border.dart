@@ -24,6 +24,7 @@ extension BorderX<T extends Widget> on T {
 extension BorderContainerX on Container {
 
   ///container border
+  ///目前只支持保持BoxDecoration的样式
   Container border({Color color = const Color(0xff95d9f1), double width = 1, double radius = 0}) {
     late Decoration mergeDecoration;
     if (decoration is BoxDecoration) {

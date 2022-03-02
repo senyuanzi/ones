@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.1.7
+  ones: ^0.1.8
 ```
 
 #### 示例
@@ -115,9 +115,10 @@ Row(children: [
 - onDoubleClick
 - onLongPress
 
-#### 功能
+#### 平台
 
 - hideSoftInput 隐藏软键盘
+- isSimulator 是否是APP模拟器
 
 #### 组件
 

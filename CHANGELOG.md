@@ -1,3 +1,7 @@
+## 0.1.8
+
+* OnesX.isSimulator
+
 ## 0.1.7
 
 * Container border、roundedCorner

@@ -28,9 +28,19 @@ extension RRectX<T extends Widget> on T {
 }
 
 ///Container roundedCorner
+///目前只支持保持BoxDecoration的样式
 extension RoundedCornerContainerX on Container {
   Container roundedCorner(double radius) {
-    return copyWith(decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius)));
+    late Decoration mergeDecoration;
+    if (decoration is BoxDecoration) {
+      mergeDecoration = (decoration as BoxDecoration).copyWith(borderRadius: BorderRadius.circular(radius));
+    } else {
+      mergeDecoration = BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(radius)),
+      );
+    }
+
+    return copyWith(decoration: mergeDecoration);
   }
 }
 
