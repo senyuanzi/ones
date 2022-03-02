@@ -1,5 +1,11 @@
 ## 0.2.0
 
+* inRow
+* inColumn
+* fix FelxX bug
+
+## 0.2.0
+
 ### Flex
 
 * inFlexibleRow
