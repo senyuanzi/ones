@@ -103,18 +103,6 @@ extension LayoutX<T extends Widget> on T {
     );
   }
 
-  //Flex
-  Flexible flexible({
-    int flex = 1,
-    FlexFit fit = FlexFit.loose,
-  }) {
-    return Flexible(flex: flex, fit: fit, child: this);
-  }
-
-  Expanded expanded() {
-    return Expanded(child: this);
-  }
-
   Positioned positioned(
       {double? left, double? right, double? top, double? bottom, double? width, double? height}) {
     return Positioned(

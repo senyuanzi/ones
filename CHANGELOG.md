@@ -1,3 +1,28 @@
+## 0.2.0
+
+### Flex
+
+* inFlexibleRow
+* inFlexibleColumn
+
+### Widget
+
+* linearGradientColor
+
+### Button -
+
+ElevatedButton、OutlinedButton、TextButton - api：
+
+1. elevation
+2. color
+3. linearGradientColor
+
+### TextField
+
+1. 添加语义化api：noTextFieldBorder
+2. 实现标准border：border({color, width, radius})
+3. 原border更新为inputBorder
+
 ## 0.1.8
 
 * OnesX.isSimulator

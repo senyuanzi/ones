@@ -37,27 +37,21 @@ extension TextFieldX on TextField {
   ///删除线
   ///
   TextField strikethrough({bool active = true, Color? color}) {
-    var newStyle = TextStyle(
-        decoration: active == true ? TextDecoration.lineThrough : TextDecoration.none,
-        decorationColor: color);
+    var newStyle = TextStyle(decoration: active == true ? TextDecoration.lineThrough : TextDecoration.none, decorationColor: color);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
   ///下划线
   ///
   TextField underLine({bool active = true, Color? color}) {
-    var newStyle = TextStyle(
-        decoration: active == true ? TextDecoration.underline : TextDecoration.none,
-        decorationColor: color);
+    var newStyle = TextStyle(decoration: active == true ? TextDecoration.underline : TextDecoration.none, decorationColor: color);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
   ///上划线
   ///
   TextField overLine({bool active = true, Color? color}) {
-    var newStyle = TextStyle(
-        decoration: active == true ? TextDecoration.overline : TextDecoration.none,
-        decorationColor: color);
+    var newStyle = TextStyle(decoration: active == true ? TextDecoration.overline : TextDecoration.none, decorationColor: color);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
@@ -156,25 +150,44 @@ extension TextFieldX on TextField {
   }
 
   TextField isCollapsedThenContentPaddingSymmetric({double horizontal = 0, double vertical = 0}) {
-    return isCollapsedThenContentPadding(
-        left: horizontal, top: vertical, right: horizontal, bottom: vertical);
+    return isCollapsedThenContentPadding(left: horizontal, top: vertical, right: horizontal, bottom: vertical);
   }
 
-  TextField isCollapsedThenContentPadding(
-      {double left = 0, double top = 0, double right = 0, double bottom = 0}) {
-    return copyWith(
-        decoration: decoration?.copyWith(
-            isCollapsed: true,
-            contentPadding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom)));
+  TextField isCollapsedThenContentPadding({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return copyWith(decoration: decoration?.copyWith(isCollapsed: true, contentPadding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom)));
   }
 
-  TextField border(InputBorder border) {
-    return copyWith(decoration: decoration?.copyWith(border: border));
+  TextField inputBorder(InputBorder border) {
+    var newDecoration = InputDecoration(border: border);
+    var merge = decoration?.copyWith(border: border) ?? newDecoration;
+    return copyWith(decoration: merge);
+  }
+
+  TextField border({Color color = const Color(0xff95d9f1), double width = 1, double radius = 0}) {
+    var newDecoration = InputDecoration(
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: color, width: width),
+        borderRadius: BorderRadius.all(Radius.circular(radius)),
+      ),
+    );
+    var merge = decoration?.copyWith(
+            border: OutlineInputBorder(
+          borderSide: BorderSide(color: color, width: width),
+          borderRadius: BorderRadius.all(Radius.circular(radius)),
+        )) ??
+        newDecoration;
+
+    return copyWith(decoration: merge);
   }
 
   ///无边框
   TextField noBorder() {
-    return border(InputBorder.none);
+    return inputBorder(InputBorder.none);
+  }
+
+  ///无边框
+  TextField noTextFieldBorder() {
+    return inputBorder(InputBorder.none);
   }
 
   TextField copyWith({
@@ -225,9 +238,7 @@ extension TextFieldX on TextField {
     TextSelectionControls? selectionControls,
     void Function()? onTap,
     MouseCursor? mouseCursor,
-    Widget? Function(BuildContext,
-            {required int currentLength, required bool isFocused, required int? maxLength})?
-        buildCounter,
+    Widget? Function(BuildContext, {required int currentLength, required bool isFocused, required int? maxLength})? buildCounter,
     ScrollController? scrollController,
     ScrollPhysics? scrollPhysics,
     Iterable<String>? autofillHints,
@@ -288,8 +299,7 @@ extension TextFieldX on TextField {
       autofillHints: autofillHints ?? this.autofillHints,
       clipBehavior: clipBehavior ?? this.clipBehavior,
       restorationId: restorationId ?? this.restorationId,
-      enableIMEPersonalizedLearning:
-          enableIMEPersonalizedLearning ?? this.enableIMEPersonalizedLearning,
+      enableIMEPersonalizedLearning: enableIMEPersonalizedLearning ?? this.enableIMEPersonalizedLearning,
     );
   }
 }

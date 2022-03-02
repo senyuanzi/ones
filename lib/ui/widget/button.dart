@@ -36,22 +36,19 @@ class RRectButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         margin: EdgeInsets.zero,
         decoration: BoxDecoration(
-          gradient: gradientColors
-              ?.let((it) => LinearGradient(colors: gradientColors!)),
+          gradient: gradientColors?.let((it) => LinearGradient(colors: gradientColors!)),
           borderRadius: BorderRadius.circular(radius),
         ),
         child: ElevatedButton(
           onPressed: onPressed,
           child: Text(
             text,
-            style: textColor
-                ?.let((it) => TextStyle(color: textColor, fontSize: fontSize)),
+            style: textColor?.let((it) => TextStyle(color: textColor, fontSize: fontSize)),
           ),
           style: ButtonStyle(
             padding: MaterialStateProperty.all(EdgeInsets.zero),
             // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(radius))),
+            shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius))),
             backgroundColor: MaterialStateProperty.all(backgroundColor),
           ),
         ),
@@ -94,8 +91,7 @@ class RRectOutlinedButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         margin: EdgeInsets.zero,
         decoration: BoxDecoration(
-          gradient: gradientColors
-              ?.let((it) => LinearGradient(colors: gradientColors!)),
+          gradient: gradientColors?.let((it) => LinearGradient(colors: gradientColors!)),
           borderRadius: BorderRadius.circular(radius),
         ),
         child: OutlinedButton(
@@ -115,6 +111,147 @@ class RRectOutlinedButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+extension ElevatedButtonX on ElevatedButton {
+  ElevatedButton elevation(double size) {
+    var newStyle = ButtonStyle(elevation: MaterialStateProperty.all(size));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  ElevatedButton color(Color color) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(color));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  ElevatedButton linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    var button = copyWith(style: merge);
+    return button.linearGradientColor(colors);
+  }
+
+  ElevatedButton copyWith({
+    Key? key,
+    void Function()? onPressed,
+    void Function()? onLongPress,
+    void Function(bool)? onHover,
+    void Function(bool)? onFocusChange,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    Widget? child,
+  }) {
+    return ElevatedButton(
+      key: key ?? this.key,
+      onPressed: onPressed ?? this.onPressed,
+      onLongPress: onLongPress ?? this.onLongPress,
+      onHover: onHover ?? this.onHover,
+      onFocusChange: onFocusChange ?? this.onFocusChange,
+      style: style ?? this.style,
+      focusNode: focusNode ?? this.focusNode,
+      autofocus: autofocus ?? this.autofocus,
+      clipBehavior: clipBehavior ?? this.clipBehavior,
+      child: child ?? this.child,
+    );
+  }
+}
+
+extension OutlinedButtonX on OutlinedButton {
+  OutlinedButton elevation(double size) {
+    var newStyle = ButtonStyle(elevation: MaterialStateProperty.all(size));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  OutlinedButton color(Color color) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(color));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  OutlinedButton linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    var button = copyWith(style: merge);
+    return button.linearGradientColor(colors);
+  }
+
+  OutlinedButton copyWith({
+    Key? key,
+    void Function()? onPressed,
+    void Function()? onLongPress,
+    void Function(bool)? onHover,
+    void Function(bool)? onFocusChange,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    Widget? child,
+  }) {
+    return OutlinedButton(
+      key: key ?? this.key,
+      onPressed: onPressed ?? this.onPressed,
+      onLongPress: onLongPress ?? this.onLongPress,
+      onHover: onHover ?? this.onHover,
+      onFocusChange: onFocusChange ?? this.onFocusChange,
+      style: style ?? this.style,
+      focusNode: focusNode ?? this.focusNode,
+      autofocus: autofocus ?? this.autofocus,
+      clipBehavior: clipBehavior ?? this.clipBehavior,
+      child: child ?? this.child!,
+    );
+  }
+}
+
+extension TextButtonX on TextButton {
+  TextButton elevation(double size) {
+    var newStyle = ButtonStyle(elevation: MaterialStateProperty.all(size));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  TextButton color(Color color) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(color));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    return copyWith(style: merge);
+  }
+
+  TextButton linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+    var merge = style?.merge(newStyle) ?? newStyle;
+    var button = copyWith(style: merge);
+    return button.linearGradientColor(colors);
+  }
+
+  TextButton copyWith({
+    Key? key,
+    void Function()? onPressed,
+    void Function()? onLongPress,
+    void Function(bool)? onHover,
+    void Function(bool)? onFocusChange,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    Widget? child,
+  }) {
+    return TextButton(
+      key: key ?? this.key,
+      onPressed: onPressed ?? this.onPressed,
+      onLongPress: onLongPress ?? this.onLongPress,
+      onHover: onHover ?? this.onHover,
+      onFocusChange: onFocusChange ?? this.onFocusChange,
+      style: style ?? this.style,
+      focusNode: focusNode ?? this.focusNode,
+      autofocus: autofocus ?? this.autofocus,
+      clipBehavior: clipBehavior ?? this.clipBehavior,
+      child: child ?? this.child!,
     );
   }
 }

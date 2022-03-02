@@ -21,6 +21,7 @@ export 'ui/widget/image.dart';
 export 'ui/widget/text.dart';
 export 'ui/widget/text_field.dart';
 export 'ui/border.dart';
+export 'ui/flex.dart';
 export 'input.dart';
 export 'ui/layout/relation.dart';
 export 'platform/platform.dart';
