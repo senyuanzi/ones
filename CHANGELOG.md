@@ -1,3 +1,9 @@
+## 0.2.7
+
+* mask
+* scrollable
+* [].scrollable
+
 ## 0.2.1
 
 * inRow
@@ -9,7 +15,7 @@
 ### Flex
 
 * inFlexibleRow
-  
+
 * inFlexibleColumn
 
 ### Widget
