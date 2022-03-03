@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ones/ui.dart';
 
-extension MultiWidgetFlexX<T extends List<dynamic>> on T {
+extension MultiWidgetFlexX<T extends List> on T {
   Flexible inFlexibleRow({
     Key? key,
     MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
@@ -59,7 +59,7 @@ extension MultiWidgetFlexX<T extends List<dynamic>> on T {
       textDirection: textDirection,
       verticalDirection: verticalDirection,
       textBaseline: textBaseline,
-      children: this as List<Widget>,
+      children: <Widget>[...this],
     );
   }
 
@@ -80,7 +80,7 @@ extension MultiWidgetFlexX<T extends List<dynamic>> on T {
       textDirection: textDirection,
       verticalDirection: verticalDirection,
       textBaseline: textBaseline,
-      children: this as List<Widget>,
+      children: <Widget>[...this],
     );
   }
 }

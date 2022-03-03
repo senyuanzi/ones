@@ -128,11 +128,23 @@ extension ElevatedButtonX on ElevatedButton {
     return copyWith(style: merge);
   }
 
-  ElevatedButton linearGradientColor(List<Color> colors) {
-    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+  Container linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.transparent),
+      shadowColor: MaterialStateProperty.all(Colors.transparent),
+    );
     var merge = style?.merge(newStyle) ?? newStyle;
     var button = copyWith(style: merge);
-    return button.linearGradientColor(colors);
+    return Container(child: button, decoration: BoxDecoration(gradient: LinearGradient(colors: colors)));
+  }
+
+  ElevatedButton roundedCorner(double radius) {
+    var newStyle = ButtonStyle(
+      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius))),
+    );
+    var merge = style?.merge(newStyle) ?? newStyle;
+    var button = copyWith(style: merge);
+    return button;
   }
 
   ElevatedButton copyWith({
@@ -175,11 +187,14 @@ extension OutlinedButtonX on OutlinedButton {
     return copyWith(style: merge);
   }
 
-  OutlinedButton linearGradientColor(List<Color> colors) {
-    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+  Container linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.transparent),
+      shadowColor: MaterialStateProperty.all(Colors.transparent),
+    );
     var merge = style?.merge(newStyle) ?? newStyle;
     var button = copyWith(style: merge);
-    return button.linearGradientColor(colors);
+    return Container(child: button, decoration: BoxDecoration(gradient: LinearGradient(colors: colors)));
   }
 
   OutlinedButton copyWith({
@@ -222,11 +237,14 @@ extension TextButtonX on TextButton {
     return copyWith(style: merge);
   }
 
-  TextButton linearGradientColor(List<Color> colors) {
-    var newStyle = ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.transparent));
+  Container linearGradientColor(List<Color> colors) {
+    var newStyle = ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.transparent),
+      shadowColor: MaterialStateProperty.all(Colors.transparent),
+    );
     var merge = style?.merge(newStyle) ?? newStyle;
     var button = copyWith(style: merge);
-    return button.linearGradientColor(colors);
+    return Container(child: button, decoration: BoxDecoration(gradient: LinearGradient(colors: colors)));
   }
 
   TextButton copyWith({

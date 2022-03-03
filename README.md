@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.2.1
+  ones: ^0.2.5
 ```
 
 #### 示例

@@ -1,14 +1,15 @@
-## 0.2.0
+## 0.2.1
 
 * inRow
 * inColumn
-* fix FelxX bug
+* fix FlexX bug
 
 ## 0.2.0
 
 ### Flex
 
 * inFlexibleRow
+  
 * inFlexibleColumn
 
 ### Widget
