@@ -45,6 +45,13 @@ extension LayoutX<T extends Widget> on T {
     );
   }
 
+  Padding paddingOnly({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return Padding(
+      padding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
+      child: this,
+    );
+  }
+
   //______margin_______
 
   Container marginAll(double size) {
@@ -103,8 +110,7 @@ extension LayoutX<T extends Widget> on T {
     );
   }
 
-  Positioned positioned(
-      {double? left, double? right, double? top, double? bottom, double? width, double? height}) {
+  Positioned positioned({double? left, double? right, double? top, double? bottom, double? width, double? height}) {
     return Positioned(
       child: this,
       left: left,
@@ -151,24 +157,15 @@ extension LayoutX<T extends Widget> on T {
     return SizedBox(width: width, height: height, child: this);
   }
 
-  ConstrainedBox constraints(
-      {double? maxWidth, double? maxHeight, double? minWidth, double? minHeight}) {
-    BoxConstraints constraints = BoxConstraints(
-        maxWidth: maxWidth ?? double.infinity,
-        maxHeight: maxHeight ?? double.infinity,
-        minWidth: minWidth ?? 0,
-        minHeight: minHeight ?? 0);
+  ConstrainedBox constraints({double? maxWidth, double? maxHeight, double? minWidth, double? minHeight}) {
+    BoxConstraints constraints = BoxConstraints(maxWidth: maxWidth ?? double.infinity, maxHeight: maxHeight ?? double.infinity, minWidth: minWidth ?? 0, minHeight: minHeight ?? 0);
 
     if (this is ConstrainedBox) {
       var thisConstraints = (this as ConstrainedBox).constraints;
-      constraints =
-          maxWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
-      constraints =
-          maxHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
-      constraints =
-          minWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
-      constraints =
-          minHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints = maxWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints = maxHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints = minWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints = minHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
     }
     return ConstrainedBox(constraints: constraints, child: this);
   }
@@ -203,8 +200,7 @@ extension LayoutX<T extends Widget> on T {
     double? cacheExtent,
     int? semanticChildCount,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
-    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
-        ScrollViewKeyboardDismissBehavior.manual,
+    ScrollViewKeyboardDismissBehavior keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
   }) {

@@ -9,7 +9,7 @@ extension ColorX<T extends Widget> on T {
     return Container(child: this, color: Color(color));
   }
 
-  Container linearGradientColor(List<Color> colors) {
-    return Container(child: this, decoration: BoxDecoration(gradient: LinearGradient(colors: colors)));
+  Container linearGradientColor(List<Color> colors, {AlignmentGeometry begin = Alignment.centerLeft, AlignmentGeometry end = Alignment.centerRight}) {
+    return Container(child: this, decoration: BoxDecoration(gradient: LinearGradient(colors: colors, begin: begin, end: end)));
   }
 }

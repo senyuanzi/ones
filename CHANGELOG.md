@@ -1,3 +1,10 @@
+## 0.2.8
+
+* Container.align
+* Container.transformAlign
+* optimized Container.color api
+* optimized Container.padding api
+
 ## 0.2.7
 
 * mask
