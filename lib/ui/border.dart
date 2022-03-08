@@ -14,6 +14,11 @@ extension BorderX<T extends Widget> on T {
         child: this);
   }
 
+  ///add border
+  Container borderIs({Color color = const Color(0xff95d9f1), double width = 1, double radius = 0}) {
+    return border(color: color, width: width, radius: radius);
+  }
+
   ///add Circle border
   Container circleBorder({Color color = const Color(0xff95d9f1), double width = 1}) {
     return border(color: color, width: width, radius: 1000);
@@ -21,6 +26,4 @@ extension BorderX<T extends Widget> on T {
 }
 
 ///Container border
-extension BorderContainerX on Container {
-
-}
+extension BorderContainerX on Container {}

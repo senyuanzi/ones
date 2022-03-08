@@ -38,6 +38,10 @@ extension LayoutX<T extends Widget> on T {
     return padding(bottom: size);
   }
 
+  Padding paddingIs({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return padding(left: left, top: top, right: right, bottom: bottom);
+  }
+
   Padding padding({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
     return Padding(
       padding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
@@ -78,6 +82,10 @@ extension LayoutX<T extends Widget> on T {
 
   Container marginBottom(double size) {
     return margin(bottom: size);
+  }
+
+  Container marginIs({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return margin(left: left, right: right, top: top, bottom: bottom);
   }
 
   Container margin({double left = 0, double top = 0, double right = 0, double bottom = 0}) {

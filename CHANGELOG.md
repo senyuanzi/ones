@@ -1,9 +1,20 @@
-## 0.2.8
+## 0.3.0
+
+### new
+
+* shadow
+* repeat
+
+* extension Card
 
 * Container.align
 * Container.transformAlign
-* optimized Container.color api
-* optimized Container.padding api
+* optimized Container.color
+* optimized Container.padding
+
+### update:
+
+* scrollable: add direction
 
 ## 0.2.7
 

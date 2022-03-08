@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.2.7
+  ones: ^0.3.0
 ```
 
 #### 示例
@@ -48,16 +48,18 @@ Row(children: [
 #### 布局
 
 - padding
-    1. paddingAll
-    2. paddingSymmetric(double horizontal,double vertical)
-    3. paddingLeft
-    4. paddingRight
-    5. paddingTop
-    6. paddingBottom
-    7. padding
+    1. paddingIs
+    2. paddingAll
+    3. paddingSymmetric(double horizontal,double vertical)
+    4. paddingLeft
+    5. paddingRight
+    6. paddingTop
+    7. paddingBottom
+    8. padding
 - margin
-    1. marginAll
-    2. 同上
+    1. marginIs
+    2. marginAll
+    3. 同上
 - flexible
 - aspectRatio
 - expanded
@@ -65,6 +67,12 @@ Row(children: [
 - relation 相对位置
     1. relation
     2. relationOne
+  
+- mask 蒙层
+- inRow
+- inColumn
+- inFlexibleRow
+- inFlexibleColumn
 
 ##### 尺寸
 
@@ -78,8 +86,12 @@ Row(children: [
     4. minHeight
     5. constraints
 
-#### 列表
+#### 列表&可滚动
 
+- scrollable
+  1. widget.scrollable
+  2. [].scrollable
+- repeat 重复item列表
 - inList
 - inSliverList
 - SliverLazyColumn<T>(data, childCount, child)
@@ -99,6 +111,7 @@ Row(children: [
 
 - border 边框
     1. border
+    3. borderIs
     2. circleBorder
 - roundedRect 圆角
     1. roundedRect
@@ -107,6 +120,7 @@ Row(children: [
 - blur 毛玻璃
     1. blur 毛玻璃
     2. blurExpanded 模糊+expanded
+- shadow 阴影
 
 #### 功能
 
@@ -200,6 +214,8 @@ TextField
   1. isCollapsedThenContentPadding
   2. isCollapsedThenContentPaddingAll
   3. isCollapsedThenContentPaddingSymmetric
+  
+Card 所有属性
 
 ## Additional information
 
