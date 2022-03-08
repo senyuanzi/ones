@@ -25,7 +25,7 @@ export 'ui/border.dart';
 export 'ui/alignment.dart';
 export 'ui/flex.dart';
 export 'ui/mask.dart';
-export 'ui/scroll.dart';
+export 'ui/scrollable.dart';
 export 'input.dart';
 export 'ui/layout/relation.dart';
 export 'platform/platform.dart';
