@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ones/ui/scrollable.dart';
 
-extension ScrollableX<T extends Widget> on T {
+extension CollectionX<T extends Widget> on T {
   SingleChildScrollView repeat(int number, {Axis direction = Axis.vertical}) {
     var list = <T>[];
     for (int i = 0; i < number; i++) {
