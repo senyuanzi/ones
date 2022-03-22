@@ -28,11 +28,12 @@ class RefreshLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var voidView = emptyWidget ?? const EmptyView();
+
     return EasyRefresh(
-        emptyWidget: emptyWidget ??
-            (showEmptyView?.let((it) => showEmptyView?.call() == true ? const EmptyView() : null)),
-        header: header ?? BallPulseHeader(color: Colors.white, backgroundColor: ColorsValue.blue),
-        footer: footer ?? BezierBounceFooter(backgroundColor: ColorsValue.blue),
+        emptyWidget: showEmptyView?.let((it) => it.call() == true ? voidView : null),
+        header: header ?? BallPulseHeader(color: const Color(0xFFB2EBF2), backgroundColor: Colors.transparent),
+        footer: footer ?? BezierBounceFooter(backgroundColor: const Color(0xFFB2EBF2)),
         onRefresh: () async => await onRefresh?.call(),
         onLoad: () async => await onLoad?.call(),
         child: child);
