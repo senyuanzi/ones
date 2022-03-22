@@ -11,8 +11,8 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-ones，the chosen，better to flutter.
-ones，天选之存在，终将统治flutter。
+ones，the chosen，better use of flutter.
+ones，the chosen，更好的使用flutter。
 
 ### 文档
 
@@ -31,7 +31,7 @@ ones，天选之存在，终将统治flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.3.1
+  ones: ^0.3.2
 ```
 
 #### 示例
