@@ -22,7 +22,7 @@ class RefreshLayout extends StatelessWidget {
   final Widget? emptyWidget;
   final Header? header;
   final Footer? footer;
-  final bool Function()? showEmptyView;
+  final bool? showEmptyView;
   final Future<void> Function()? onRefresh;
   final Future<void> Function()? onLoad;
 
@@ -31,7 +31,7 @@ class RefreshLayout extends StatelessWidget {
     var voidView = emptyWidget ?? const EmptyView();
 
     return EasyRefresh(
-        emptyWidget: showEmptyView?.let((it) => it.call() == true ? voidView : null),
+        emptyWidget: showEmptyView?.let((it) => it == true ? voidView : null),
         header: header ?? BallPulseHeader(color: const Color(0xFFB2EBF2), backgroundColor: Colors.transparent),
         footer: footer ?? BezierBounceFooter(backgroundColor: const Color(0xFFB2EBF2)),
         onRefresh: () async => await onRefresh?.call(),

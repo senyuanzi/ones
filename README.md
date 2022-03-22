@@ -11,9 +11,9 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-ones，the chosen，better use of flutter.
+Ones，the chosen，better use of Flutter.
 
-ones，the chosen，更好的使用flutter。
+Ones，the chosen，更好地使用Flutter。
 
 ### 文档
 
@@ -32,7 +32,7 @@ ones，the chosen，更好的使用flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.3.2
+  ones: ^0.3.3
 ```
 
 #### 示例
