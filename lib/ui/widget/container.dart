@@ -16,7 +16,7 @@ extension ContainerX on Container {
   Container roundedCorner(double radius) {
     late Decoration mergeDecoration;
     if (decoration is BoxDecoration) {
-      mergeDecoration = (decoration as BoxDecoration).copyWith(borderRadius: BorderRadius.circular(radius));
+      mergeDecoration = (decoration as BoxDecoration).copyWith(borderRadius: BorderRadius.circular(radius), color: color);
     } else {
       //todo 调整优化
       mergeDecoration = BoxDecoration(
@@ -24,7 +24,7 @@ extension ContainerX on Container {
       );
     }
 
-    return copyWith(decoration: mergeDecoration);
+    return copyWith(decoration: mergeDecoration, color: null);
   }
 
   //__________________ 优化 border _______________________
@@ -36,6 +36,7 @@ extension ContainerX on Container {
     late Decoration mergeDecoration;
     if (decoration is BoxDecoration) {
       mergeDecoration = (decoration as BoxDecoration).copyWith(
+        color: color,
         border: Border.all(color: color, width: width),
         borderRadius: BorderRadius.all(
           Radius.circular(radius),
@@ -50,7 +51,7 @@ extension ContainerX on Container {
       );
     }
 
-    return copyWith(decoration: mergeDecoration);
+    return copyWith(decoration: mergeDecoration,color: null);
   }
 
   ///add Circle border
