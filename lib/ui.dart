@@ -11,7 +11,7 @@ export 'extension/scope_ex.dart';
 export 'ui/action.dart';
 export 'ui/color.dart';
 export 'ui/effect/bottom_fab_location.dart';
-export 'ui/effect/gradient_tab_indicator.dart';
+export 'ui/navigation/gradient_tab_indicator.dart';
 export 'ui/layout/refresh_layout.dart';
 export 'ui/rounded_rectangle.dart';
 export 'ui/widget/button.dart';
