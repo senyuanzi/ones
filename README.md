@@ -32,7 +32,7 @@ Ones，the chosen，更好地使用Flutter。
 
 ```yaml
 dependencies:
-  ones: ^0.3.4
+  ones: ^0.3.5
 ```
 
 #### 示例
