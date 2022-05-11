@@ -14,12 +14,17 @@ extension ActionX<T extends Widget> on T {
   }) {
     return Material(
       color: Colors.transparent,
+      shadowColor: Colors.transparent,
       child: InkWell(
         child: this,
         onTap: onClick,
         onDoubleTap: onDoubleClick,
         onLongPress: onLongPress,
         highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        enableFeedback: false,
       ),
     );
   }
